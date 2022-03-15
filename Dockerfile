@@ -1,4 +1,4 @@
-FROM node:12-alpine as build-stage
+FROM node:14-alpine as build-stage
 
 WORKDIR /app
 
@@ -22,18 +22,15 @@ RUN make lib
 RUN yarn install --non-interactive --frozen-lockfile --production
 
 # copy built application to runtime image
-FROM node:12-alpine
+FROM node:14-alpine
 WORKDIR /app
 COPY --from=build-stage /app/config config
 COPY --from=build-stage /app/lib lib
 COPY --from=build-stage /app/node_modules node_modules
+RUN ls -lah lib
 
 # setup default env
 ENV NODE_ENV production
 
-# install wait script
-ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.2.1/wait /wait
-RUN chmod +x /wait
-
-## Launch the wait tool and then your application
-CMD /wait && node lib/app.js
+# app entrypoint
+CMD [ "node", "lib/index.js" ]

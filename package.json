@@ -7,18 +7,6 @@
     "main": "lib/package.js",
     "module": "lib/package.m.js",
     "types": "lib/package.d.ts",
-    "browser": {
-        "buffer": false,
-        "crypto": false
-    },
-    "sideEffects": false,
-    "files": [
-        "lib/*",
-        "src/*"
-    ],
-    "scripts": {
-        "prepare": "make"
-    },
     "dependencies": {
         "@greymass/eosio": "^0.3.0",
         "@types/bunyan": "^1.8.6",
