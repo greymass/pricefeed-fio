@@ -1,0 +1,52 @@
+{
+    "name": "@greymass/pricefeed-fio",
+    "description": "DESCRIPTION",
+    "version": "0.0.1",
+    "homepage": "https://github.com/greymass/pricefeed-fio",
+    "license": "BSD-3-Clause",
+    "main": "lib/package.js",
+    "module": "lib/package.m.js",
+    "types": "lib/package.d.ts",
+    "browser": {
+        "buffer": false,
+        "crypto": false
+    },
+    "sideEffects": false,
+    "files": [
+        "lib/*",
+        "src/*"
+    ],
+    "scripts": {
+        "prepare": "make"
+    },
+    "dependencies": {
+        "@greymass/eosio": "^0.3.0",
+        "@types/bunyan": "^1.8.6",
+        "@types/config": "^0.0.38",
+        "axios": "^0.21.1",
+        "bunyan": "^1.8.15",
+        "config": "^3.3.4",
+        "node-fetch": "^2.6.1",
+        "toml": "^3.0.0",
+        "tslib": "^2.1.0"
+    },
+    "devDependencies": {
+        "@rollup/plugin-typescript": "^8.1.1",
+        "@types/mocha": "^8.0.3",
+        "@types/node": "^14.14.28",
+        "@typescript-eslint/eslint-plugin": "^4.15.1",
+        "@typescript-eslint/parser": "^4.15.1",
+        "assert": "^2.0.0",
+        "eslint": "^7.19.0",
+        "eslint-config-prettier": "^7.0.0",
+        "eslint-plugin-prettier": "^3.2.0",
+        "gh-pages": "^3.1.0",
+        "mocha": "^8.2.1",
+        "nyc": "^15.1.0",
+        "onchange": "^7.1.0",
+        "prettier": "^2.2.1",
+        "ts-node": "^9.1.0",
+        "typedoc": "^0.20.25",
+        "typescript": "^4.1.2"
+    }
+}
